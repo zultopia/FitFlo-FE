@@ -1,0 +1,87 @@
+---
+description: Consolidated best practices for the project tech stack
+globs: **/*.{ts,tsx,js,jsx,css}
+alwaysApply: false
+---
+- **React**
+  - Use functional components with hooks for better performance and readability
+  - Implement proper state management using Context API or Zustand for complex state
+  - Utilize memoization techniques like `useMemo` and `useCallback` for performance optimization
+
+- **TypeScript**
+  - Enable strict mode in `tsconfig.json` for better type safety
+  - Use generics for reusable components and functions
+  - Implement custom type guards for runtime type checking
+
+- **Tailwind CSS**
+  - Use utility-first classes for consistent styling
+  - Create custom themes for brand-specific styles
+  - Utilize `@apply` directive for component-specific styles
+
+- **Vite**
+  - Use environment variables for configuration
+  - Implement code splitting for better performance
+  - Utilize Vite plugins for optimizing build process
+
+- **Heroicons**
+  - Use Heroicons for consistent iconography across the application
+  - Implement custom icons as needed for specific use cases
+
+- **Aternity UI**
+  - Follow Aternity UI component guidelines for consistent UI
+  - Customize components using Aternity's theming system
+
+- **Shadcn UI**
+  - Use Shadcn UI components for rapid UI development
+  - Customize components using Shadcn's utility classes
+
+- **Ant Design**
+  - Utilize Ant Design's grid system for responsive layouts
+  - Implement Ant Design's form components with React Hook Form for better form handling
+
+- **React Router**
+  - Use nested routes for better route organization
+  - Implement route guards for protected routes
+  - Utilize `useParams` and `useLocation` hooks for dynamic routing
+
+- **Radix UI**
+  - Use Radix UI primitives for accessible and customizable components
+  - Implement Radix UI's state management for complex UI interactions
+
+- **Zustand**
+  - Use Zustand for global state management
+  - Implement middleware for logging and devtools integration
+
+- **Next.js**
+  - Use Next.js for server-side rendering and static site generation
+  - Implement Next.js API routes for serverless functions
+  - Utilize Next.js image optimization for better performance
+
+- **React Hook Form**
+  - Use React Hook Form for efficient form handling
+  - Implement custom validation rules for complex form validation
+  - Utilize `useFormContext` for nested form components
+
+- **Framer Motion**
+  - Use Framer Motion for smooth animations and transitions
+  - Implement gesture-based interactions for enhanced user experience
+
+- **Stripe**
+  - Use Stripe for secure payment processing
+  - Implement Stripe's Elements for customizable payment forms
+  - Utilize Stripe's webhooks for real-time payment updates
+
+- **Clerk**
+  - Use Clerk for user authentication and management
+  - Implement Clerk's UI components for seamless integration
+  - Utilize Clerk's webhooks for user-related events
+
+- **Express.js**
+  - Use Express.js for building RESTful APIs
+  - Implement middleware for request processing and error handling
+  - Utilize Express.js routers for better route organization
+
+- **IRIS**
+  - Use IRIS for healthcare data management
+  - Implement IRIS's FHIR API for interoperability
+  - Utilize IRIS's analytics capabilities for data insights
