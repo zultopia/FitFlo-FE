@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --transparent: transparent;
+    --white: #FFFFFF;
+    --black: #000000;
+  }
+}
+
+@layer components {
+  @keyframes aurora {
+    from {
+      background-position: 50% 50%, 50% 50%;
+    }
+    to {
+      background-position: 350% 50%, 350% 50%;
+    }
+  }
+
+  .animate-aurora {
+    animation: aurora 60s linear infinite;
+  }
+  
+  @keyframes blob-slow {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, 30px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+  
+  @keyframes blob-medium {
+    0% { transform: translate(0, 0) scale(0.9); }
+    33% { transform: translate(-30px, -20px) scale(1.1); }
+    66% { transform: translate(20px, -30px) scale(1); }
+    100% { transform: translate(0, 0) scale(0.9); }
+  }
+  
+  @keyframes blob-fast {
+    0% { transform: translate(0, 0) scale(1.1); }
+    33% { transform: translate(20px, -20px) scale(0.8); }
+    66% { transform: translate(-30px, -10px) scale(1.2); }
+    100% { transform: translate(0, 0) scale(1.1); }
+  }
+  
+  .animate-blob-slow {
+    animation: blob-slow 20s ease-in-out infinite alternate;
+  }
+  
+  .animate-blob-medium {
+    animation: blob-medium 15s ease-in-out infinite alternate;
+  }
+  
+  .animate-blob-fast {
+    animation: blob-fast 10s ease-in-out infinite alternate;
+  }
+  
+  .bg-radial-gradient {
+    background: radial-gradient(circle at 100% 0%, rgba(0,0,0,0.2) 0%, transparent 70%);
+  }
+}

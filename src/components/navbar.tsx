@@ -10,16 +10,39 @@ import {
 } from "@heroui/navbar";
 import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
+import { useState, useEffect } from "react";
+import { TbRibbonHealth } from "react-icons/tb";
 
 import { siteConfig } from "@/config/site";
-
-import { TbRibbonHealth } from "react-icons/tb";
+import { cn } from "@/lib/utils";
 
 import Logo from "/logo.svg";
 
 export const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky">
+    <HeroUINavbar
+      className={cn(
+        "z-50 transition-all duration-300",
+        scrolled 
+          ? "bg-white/70 backdrop-blur-md" 
+          : "bg-transparent"
+      )}
+      maxWidth="xl"
+      position="sticky"
+    >
       <NavbarContent className="basis-1/5 sm:basis-1/4" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
           <Link
@@ -61,7 +84,7 @@ export const Navbar = () => {
             <Button
               isExternal
               as={Link}
-              className="text-sm font-normal text-default-600 bg-default-100 hover:bg-default-200"
+              className="text-sm font-normal text-default-600 bg-default-100/70 hover:bg-default-200/70 backdrop-blur-sm"
               variant="flat"
             >
               Login
@@ -79,7 +102,7 @@ export const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarMenu>
+      <NavbarMenu className="bg-white/70 backdrop-blur-sm">
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
