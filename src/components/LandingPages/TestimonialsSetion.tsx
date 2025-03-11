@@ -134,7 +134,7 @@ const TestimonialsSection = () => {
                         alt={testimonial.name} 
                         className="w-14 h-14 rounded-full object-cover border border-gray-300"
                       />
-                      <div className="flex flex-col justify-center items-center">
+                      <div className="flex flex-col md:justify-normal md:items-start justify-center items-center">
                         <h3 className="text-xl font-semibold text-gray-800">{testimonial.name}</h3>
                         <p className="text-sm text-gray-500">{testimonial.age} years old</p>
                         <p className="text-sm text-gray-500">{testimonial.status}</p>
