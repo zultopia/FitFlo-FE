@@ -105,7 +105,7 @@ const Register = () => {
               onClick={() => setStep(2)}
               className="w-full bg-primary text-white py-2 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
             >
-              Next
+              Verify Your Email
             </button>
 
             <div className="flex items-center my-4">
@@ -182,7 +182,7 @@ const Register = () => {
                <input type="text" name="medicalHistory" value={formData.medicalHistory} onChange={handleChange} className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white" />
              </div>
 
-            <button className="w-full bg-blue-600 text-white py-2 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+            <button className="w-full bg-primary text-white py-2 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
               Complete Registration
             </button>
           </div>
