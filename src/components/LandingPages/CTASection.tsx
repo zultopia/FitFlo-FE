@@ -13,7 +13,7 @@ const CTASection = () => {
             {/* Left Section */}
             <div className="md:w-1/2 p-8 text-center md:text-left">
               <h2 className="text-4xl md:text-5xl font-semibold mb-4 leading-tight text-gray-900">
-                Join 5,000+ patients<br className="hidden md:block" /> already improving with FitFlo
+                Join 100+ patients<br className="hidden md:block" /> already improving with FitFlo
               </h2>
               <p className="text-xl text-gray-600 mb-8">
                 We built the complete health monitoring<br className="hidden md:block" /> platform, so you don't have to worry
