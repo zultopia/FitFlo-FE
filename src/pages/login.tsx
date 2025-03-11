@@ -59,7 +59,7 @@ const Login = () => {
         </div>
 
         <div className="mt-4 text-right">
-          <a href="#" className="text-sm text-primary hover:underline">
+          <a href="/forgetpassword" className="text-sm text-primary hover:underline">
             Forgot Password?
           </a>
         </div>
