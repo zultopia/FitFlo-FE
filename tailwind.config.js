@@ -17,11 +17,14 @@ export default {
         secondary: "#4974ee",
         accent: "#95d7f3",
       },
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+      },
       animation: {
         aurora: "aurora 60s linear infinite",
         "blob-slow": "blob-slow 20s ease-in-out infinite alternate",
         "blob-medium": "blob-medium 15s ease-in-out infinite alternate",
-        "blob-fast": "blob-fast 10s ease-in-out infinite alternate",
+        "blob-fast": "blob-faast 10s ease-in-out infinite alternate",
       },
       keyframes: {
         aurora: {
