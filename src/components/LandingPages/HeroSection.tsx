@@ -60,13 +60,13 @@ const HeroSection = () => {
   return (
     <section className="relative w-full min-h-screen bg-white overflow-hidden pb-10 pt-2">
       {/* Main content centered */}
-      <div className="relative mx-auto px-4 md:px-6 h-full flex flex-col items-center">
+      <div className="relative mx-auto h-full flex flex-col items-center">
         {/* Content Container - All centered */}
         <div className="w-full max-w-5xl mx-auto flex flex-col items-center text-center">
           {/* Text Content - Centered */}
           <motion.div
             animate={{ opacity: 1, y: 0 }}
-            className="flex flex-col items-center space-y-6 mb-6"
+            className="flex flex-col items-center space-y-6 mb-2"
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.8 }}
           >
@@ -116,7 +116,7 @@ const HeroSection = () => {
 
             <motion.div
               animate={{ opacity: 1 }}
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
@@ -262,7 +262,7 @@ const HeroSection = () => {
               </h3>
             </div>
             <div className="mb-2 flex items-center">
-              <span className="text-2xl font-bold">38,214</span>
+              <span className="text-2xl font-bold">50+</span>
               <span className="ml-2 text-green-500 text-sm font-medium">
                 +3.9%
               </span>
