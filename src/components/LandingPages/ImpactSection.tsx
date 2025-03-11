@@ -32,7 +32,7 @@ const ImpactSection = () => {
       
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <motion.h3
-          className="text-blue-700 font-semibold uppercase tracking-wide text-lg"
+          className="text-blue-600 dark:text-blue-400 font-semibold tracking-wide text-lg"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
