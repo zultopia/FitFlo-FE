@@ -34,7 +34,7 @@ const Login = () => {
 
         <div className="mt-6 space-y-4">
           <div className="text-left">
-            <label className="text-gray-600 text-sm">Email/Telephone Number</label>
+            <label className="text-gray-600 text-sm">Email/Phone Number</label>
             <input
               type="text"
               className="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm sm:text-base"
@@ -59,12 +59,12 @@ const Login = () => {
         </div>
 
         <div className="mt-4 text-right">
-          <a href="#" className="text-sm text-blue-600 hover:underline">
+          <a href="#" className="text-sm text-primary hover:underline">
             Forgot Password?
           </a>
         </div>
 
-        <button className="w-full mt-5 bg-blue-600 text-white py-2 rounded-lg text-base font-semibold hover:bg-blue-700 transition">
+        <button className="w-full mt-5 bg-primary text-white py-2 rounded-lg text-base font-semibold hover:bg-blue-700 transition">
           Login
         </button>
 
@@ -81,7 +81,7 @@ const Login = () => {
 
         <div className="mt-5 text-gray-600 text-sm">
           Don't have an account? {" "}
-          <a href="/register" className="text-blue-600 font-semibold hover:underline">
+          <a href="/register" className="text-primary font-semibold hover:underline">
             Register Now
           </a>
         </div>
