@@ -9,7 +9,7 @@ import {
   FaBars,
 } from "react-icons/fa";
 import { MdEventNote } from "react-icons/md";
-import Logo from "/logo.svg";
+import Logo from "/white.svg";
 import { Link } from "@heroui/link";
 
 const Sidebar = () => {
@@ -62,7 +62,7 @@ const Sidebar = () => {
               <img
                 src={Logo}
                 alt="Fitflo Logo"
-                className="w-[120px] h-8 filter invert"
+                className="w-[120px] h-8"
               />
             </div>
           )}
