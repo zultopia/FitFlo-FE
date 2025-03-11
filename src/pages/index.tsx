@@ -14,8 +14,8 @@ export default function IndexPage() {
       <FeaturesSection />
       <ImpactSection />
       <TestimonialsSection />
-      <CTASection />
       <FaQ />
+      <CTASection />
       <Footer />
     </DefaultLayout>
   );

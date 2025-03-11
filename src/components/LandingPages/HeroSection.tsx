@@ -4,6 +4,7 @@ import { FaArrowRight, FaChartLine } from "react-icons/fa";
 import { MdAccessTime } from "react-icons/md";
 import { FaClipboardList } from "react-icons/fa";
 import { Button } from "@heroui/button";
+import { Link } from "react-router-dom";
 
 import dashboardImg from "../../assets/dashboard.png";
 
@@ -55,11 +56,12 @@ const HeroSection = () => {
   const { scrollYProgress } = useScroll();
   const [mounted, setMounted] = useState(false);
 
-  // Transform values for device animation - adjusted for better scrolling effect
-  const rotate = useTransform(scrollYProgress, [0, 0.4], [15, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.4], [0.9, 1]);
-  // Enhanced y transform for more dramatic movement
-  const y = useTransform(scrollYProgress, [0, 0.4], [-80, 30]);
+  // Mengubah range scrollYProgress dari [0, 0.4] menjadi [0, 0.2] agar efek lebih cepat
+  // Dan memperbesar nilai rotasi dari 15 menjadi 25 derajat
+  const rotate = useTransform(scrollYProgress, [0, 0.2], [25, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2], [0.9, 1]);
+  // Memperbesar range pergerakan y dari [-80, 30] menjadi [-120, 50]
+  const y = useTransform(scrollYProgress, [0, 0.2], [-120, 50]);
 
   // Client-side only mounting
   useEffect(() => {
@@ -69,11 +71,11 @@ const HeroSection = () => {
   return (
     <div className="relative">
       <AuroraBackground
-        className="w-full min-h-screen overflow-hidden pb-10 pt-2 -mt-16"
+        className="w-full min-h-screen overflow-hidden pb-10 pt-16"
         intensity="medium"
       >
         {/* Main content centered */}
-        <div className="relative mx-auto px-4 md:px-6 h-full flex flex-col items-center z-10 pt-16">
+        <div className="relative mx-auto px-4 md:px-6 h-full flex flex-col items-center z-10">
           {/* Content Container - All centered */}
           <div className="w-full max-w-5xl mx-auto flex flex-col items-center text-center">
             {/* Text Content - Centered */}
@@ -134,13 +136,15 @@ const HeroSection = () => {
                 transition={{ delay: 0.6, duration: 0.8 }}
               >
                 {/* Reduced button size */}
-                <Button
-                  className="bg-blue-600 hover:bg-blue-700 transition-colors text-white font-medium rounded-lg flex items-center justify-center gap-2 text-base"
-                  variant="shadow"
-                >
-                  Start My Journey
-                  <FaArrowRight className="text-xs" />
-                </Button>
+                <Link to="/register">
+                  <Button
+                    className="bg-blue-600 hover:bg-blue-700 transition-colors text-white font-medium rounded-lg flex items-center justify-center gap-2 text-base"
+                    variant="shadow"
+                  >
+                    Start My Journey
+                    <FaArrowRight className="text-xs" />
+                  </Button>
+                </Link>
                 <Button
                   className="text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white transition-colors"
                   variant="flat"
@@ -337,12 +341,13 @@ const HeroSection = () => {
           }}
         />
       </AuroraBackground>
-      
+
       {/* White gradient overlay for smooth transition */}
-      <div 
+      <div
         className="absolute bottom-0 left-0 w-full h-60 pointer-events-none z-10"
         style={{
-          background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 60%, rgba(255,255,255,1) 100%)'
+          background:
+            "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 60%, rgba(255,255,255,1) 100%)",
         }}
       />
     </div>

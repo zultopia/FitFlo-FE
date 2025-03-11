@@ -1,5 +1,4 @@
 import { Button } from "@heroui/button";
-import { Link } from "@heroui/link";
 import {
   Navbar as HeroUINavbar,
   NavbarBrand,
@@ -16,6 +15,8 @@ import { TbRibbonHealth } from "react-icons/tb";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
+import { Link } from "react-router-dom";
+
 import Logo from "/logo.svg";
 
 export const Navbar = () => {
@@ -27,6 +28,7 @@ export const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -35,13 +37,10 @@ export const Navbar = () => {
   return (
     <HeroUINavbar
       className={cn(
-        "z-50 transition-all duration-300",
-        scrolled 
-          ? "bg-white/70 backdrop-blur-md" 
-          : "bg-transparent"
+        "fixed top-0 w-full z-50 transition-all duration-300",
+        scrolled ? "bg-white/70 backdrop-blur-md shadow-sm" : "bg-transparent",
       )}
       maxWidth="xl"
-      position="sticky"
     >
       <NavbarContent className="basis-1/5 sm:basis-1/4" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
@@ -62,7 +61,7 @@ export const Navbar = () => {
               <Link
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium hover:text-primary"
+                  "data-[active=true]:text-primary data-[active=true]:font-medium hover:text-primary",
                 )}
                 color="foreground"
                 href={item.href}
@@ -81,23 +80,22 @@ export const Navbar = () => {
         <NavbarItem className="hidden sm:flex gap-2" />
         <NavbarItem className="hidden md:flex">
           <div className="flex gap-2">
-            <Button
-              isExternal
-              as={Link}
-              className="text-sm font-normal text-default-600 bg-default-100/70 hover:bg-default-200/70 backdrop-blur-sm"
-              variant="flat"
-            >
-              Login
-            </Button>
-            <Button
-              isExternal
-              as={Link}
-              className="text-sm font-normal text-white0 bg-primary"
-              href={siteConfig.links.sponsor}
-              variant="shadow"
-            >
-              Join Fitflo <TbRibbonHealth className="stroke-[2.5px]" />
-            </Button>
+            <Link to="/login">
+              <Button
+                className="text-sm font-normal text-default-600 bg-default-100/70 hover:bg-default-200/70 backdrop-blur-sm"
+                variant="flat"
+              >
+                Login
+              </Button>
+            </Link>
+            <Link to="/register">
+              <Button
+                className="text-sm font-normal text-white0 bg-primary"
+                variant="shadow"
+              >
+                Join Fitflo <TbRibbonHealth className="stroke-[2.5px]" />
+              </Button>
+            </Link>
           </div>
         </NavbarItem>
       </NavbarContent>
