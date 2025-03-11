@@ -47,7 +47,7 @@ export const Navbar = () => {
           <Link
             className="flex justify-start items-center gap-1"
             color="foreground"
-            href="/"
+            to="/"
           >
             <img alt="Logo" className="w-20" src={Logo} />
           </Link>
@@ -64,7 +64,7 @@ export const Navbar = () => {
                   "data-[active=true]:text-primary data-[active=true]:font-medium hover:text-primary",
                 )}
                 color="foreground"
-                href={item.href}
+                to={item.href}
               >
                 {item.label}
               </Link>
@@ -112,8 +112,7 @@ export const Navbar = () => {
                       ? "danger"
                       : "foreground"
                 }
-                href="#"
-                size="lg"
+                to="#"
               >
                 {item.label}
               </Link>

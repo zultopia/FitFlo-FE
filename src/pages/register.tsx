@@ -103,7 +103,7 @@ const Register = () => {
 
             <button
               onClick={() => setStep(2)}
-              className="w-full bg-primary text-white py-2 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+              className="w-full bg-primary text-white py-2 rounded-lg text-base font-semibold hover:bg-blue-700 transition"
             >
               Verify Your Email
             </button>
@@ -121,7 +121,7 @@ const Register = () => {
 
              <div className="mt-5 text-gray-600 text-sm">
                Already have an account? {" "}
-               <Link href="/login" className="text-primary font-semibold hover:underline">
+               <Link href="/login" className="text-primary text-sm font-semibold hover:underline">
                  Log in
                </Link>
              </div>
