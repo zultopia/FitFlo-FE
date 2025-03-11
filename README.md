@@ -12,6 +12,7 @@ This is a template for creating applications using Vite and HeroUI (v2).
 - [Tailwind Variants](https://tailwind-variants.org)
 - [TypeScript](https://www.typescriptlang.org)
 - [Framer Motion](https://www.framer.com/motion)
+- [Embla Carousel] (https://www.embla-carousel.com/)
 
 ## How to Use
 
