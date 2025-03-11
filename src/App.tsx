@@ -6,6 +6,7 @@ import PricingPage from "@/pages/pricing";
 import BlogPage from "@/pages/blog";
 import AboutPage from "@/pages/about";
 import LoginPage from "@/pages/login";
+import MilestonesPage from "@/pages/milestones";
 import RegisterPage from "@/pages/register";
 import Dashboard from "@/pages/dashboard";
 import ForgetPasswordPage from "@/pages/forgetpassword";
@@ -22,6 +23,7 @@ function App() {
       <Route element={<RegisterPage />} path="/register" />
       <Route element={<Dashboard />} path="/dashboard" />
       <Route element={<ForgetPasswordPage />} path="/forgetpassword" />
+      <Route element={<MilestonesPage />} path="/milestones" />
     </Routes>
   );
 }

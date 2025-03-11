@@ -37,7 +37,7 @@ const ImpactSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Impact
+          IMPACT
         </motion.h3>
         <motion.h2
           className="text-2xl font-extrabold mt-2 text-gray-900"

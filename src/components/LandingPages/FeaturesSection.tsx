@@ -45,7 +45,7 @@ const FeaturesSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Overview
+          OVERVIEW
         </motion.p>
         <motion.h2
           className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mt-2"
