@@ -22,6 +22,8 @@ export default {
         "blob-slow": "blob-slow 20s ease-in-out infinite alternate",
         "blob-medium": "blob-medium 15s ease-in-out infinite alternate",
         "blob-fast": "blob-faast 10s ease-in-out infinite alternate",
+        "marquee": "marquee 40s linear infinite",
+        "marquee-reverse": "marquee-reverse 40s linear infinite",
       },
       keyframes: {
         aurora: {
@@ -50,6 +52,14 @@ export default {
           "66%": { transform: "translate(-30px, -10px) scale(1.2)" },
           "100%": { transform: "translate(0, 0) scale(1.1)" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" }
+        },
+        "marquee-reverse": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" }
+        }
       },
     },
   },

@@ -2,7 +2,7 @@ import DefaultLayout from "@/layouts/default";
 import HeroSection from "@/components/LandingPages/HeroSection";
 import FeaturesSection from "@/components/LandingPages/FeaturesSection";
 import ImpactSection from "@/components/LandingPages/ImpactSection";
-import TestimonialsSection from "@/components/LandingPages/TestimonialsSetion";
+import TestimonialsSection from "@/components/LandingPages/TestimonialSection";
 import CTASection from "@/components/LandingPages/CTASection";
 import FaQ from "@/components/LandingPages/FaQ";
 import Footer from "@/components/LandingPages/Footer";
