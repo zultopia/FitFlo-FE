@@ -41,7 +41,7 @@ const impactData = [
     icon: <FaChartLine className="text-indigo-600" size={50} />,
     title: "Scalable Solutions for Global Impact",
     description:
-      "FitFlo is designed to scale seamlessly, from local clinics to national healthcare systems. Already helping 10,000+ users thrive, FitFlo is ready to expand globally.",
+      "FitFlo is designed to scale seamlessly, from local clinics to national healthcare systems. Already helping 100+ users thrive, FitFlo is ready to expand globally.",
     bgColor: "from-indigo-200 to-indigo-400",
   },
 ];
