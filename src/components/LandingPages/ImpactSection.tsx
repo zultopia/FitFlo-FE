@@ -53,7 +53,7 @@ const ImpactSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative pt-4 pb-28 md:pt-8 md:pb-1 bg-white overflow-hidden"
+      className="relative pt-4 pb-[350px] md:pt-8 md:pb-1 bg-white overflow-hidden"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-200 opacity-20 blur-3xl rounded-full" />
@@ -72,13 +72,13 @@ const ImpactSection = () => {
           </motion.h3>
           <motion.h2
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-4xl font-extrabold mt-2 text-gray-900"
+            className="text-xl md:text-2xl font-extrabold mt-2 text-gray-900"
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.6 }}
           >
             How FitFlo Transforms Healthcare
           </motion.h2>
-          <p className="text-md md:text-lg text-gray-700 mt-4 max-w-3xl mx-auto">
+          <p className="text-sm md:text-md text-gray-700 mt-4 max-w-3xl mx-auto">
             Our platform delivers measurable improvements across the healthcare
             ecosystem, from patient outcomes to doctor efficiency and cost
             reduction.
@@ -188,7 +188,7 @@ const CardWithScrollAnimation = ({
 
   return (
     <motion.div
-      className={`p-8 rounded-3xl shadow-xl flex flex-col items-start text-left bg-gradient-to-br ${impact.bgColor} relative overflow-hidden absolute w-full`}
+      className={`p-8 rounded-3xl shadow-xl flex flex-col items-start text-left bg-gradient-to-br ${impact.bgColor} relative overflow-hidden w-full`}
       style={{
         opacity,
         y,

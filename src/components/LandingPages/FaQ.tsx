@@ -47,7 +47,6 @@ const cn = (...classes: (string | boolean | undefined)[]) => {
 const FaqItem = ({
   question,
   answer,
-  id,
   index,
 }: {
   question: string;
@@ -145,7 +144,7 @@ const FaQ = () => {
           <h3 className="text-blue-700 font-semibold uppercase tracking-wide text-lg">
             Frequently Asked Questions
           </h3>
-          <h2 className="text-3xl font-extrabold mb-3 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+          <h2 className="text-xl md:text-2xl font-extrabold mb-3 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
             Have questions? We've got answers!
           </h2>
           <p className="text-sm text-gray-600">
