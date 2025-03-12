@@ -7,6 +7,7 @@ import {
   FaHeartbeat,
   FaBriefcaseMedical,
   FaBars,
+  FaSignOutAlt,
 } from "react-icons/fa";
 import { MdEventNote } from "react-icons/md";
 import Logo from "/white.svg";
@@ -31,8 +32,12 @@ const Sidebar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleLogout = () => {
+    window.location.href = "/";
+  };
+
   return (
-    <div>
+    <div className="h-screen sticky top-0">
       {isMobile && (
         <button
           onClick={() => setIsSidebarOpen(true)}
@@ -81,12 +86,18 @@ const Sidebar = () => {
           <SidebarLink href="/personal-care" icon={<FaHeartbeat size={18} />} text="Personal Care" isSidebarOpen={isSidebarOpen} />
         </nav>
 
-        {/* Menambahkan lebih banyak jarak antara Personal Care dan FAQ di tampilan mobile */}
         <div className={`${isMobile ? "mt-16 space-y-6" : "mt-10 space-y-6"}`}>
           <SidebarLink href="/faq" icon={<FaQuestionCircle size={18} />} text="FAQ" isSidebarOpen={isSidebarOpen} />
           <SidebarLink href="/settings" icon={<FaCog size={18} />} text="Settings" isSidebarOpen={isSidebarOpen} />
           <SidebarLink href="/profile" icon={<FaUser size={18} />} text="Profile" isSidebarOpen={isSidebarOpen} />
         </div>
+        <button 
+           onClick={handleLogout}
+           className="mt-6 flex items-center text-red-600 font-medium p-2 rounded-lg hover:bg-gray-100 transition-all"
+        >
+          <FaSignOutAlt size={18} />
+          {isSidebarOpen && <span className="ml-3">Logout</span>}
+        </button>
       </div>
     </div>
   );

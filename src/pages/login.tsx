@@ -64,9 +64,9 @@ const Login = () => {
           </a>
         </div>
 
-        <button className="w-full mt-5 bg-primary text-white py-2 rounded-lg text-base font-semibold hover:bg-blue-700 transition">
+        <Link href="/dashboard" className="w-full mt-5 bg-primary text-white py-2 rounded-lg text-base font-semibold hover:bg-blue-700 transition flex justify-center">
           Login
-        </button>
+        </Link>
 
         <div className="flex items-center my-4">
           <hr className="flex-grow border-gray-300" />

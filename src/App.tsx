@@ -10,6 +10,7 @@ import MilestonesPage from "@/pages/milestones";
 import RegisterPage from "@/pages/register";
 import Dashboard from "@/pages/dashboard";
 import ForgetPasswordPage from "@/pages/forgetpassword";
+import ProfilePage from "@/pages/profile";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route element={<Dashboard />} path="/dashboard" />
       <Route element={<ForgetPasswordPage />} path="/forgetpassword" />
       <Route element={<MilestonesPage />} path="/milestones" />
+      <Route element={<ProfilePage />} path="/profile" />
     </Routes>
   );
 }
