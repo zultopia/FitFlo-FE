@@ -11,6 +11,7 @@ import BreathingImg from "@/assets/breathing.png";
 import MotionPostureImg from "@/assets/motion_posture.png";
 import SleepImg from "@/assets/sleep.png";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import smartWatchImage from "@/assets/smart_watch.png";
 
 const healthData = [
   { name: "Mon", health: 85 },
@@ -33,6 +34,13 @@ const healthMetrics = {
 };
 
 const Dashboard = () => {
+  const [isConnected, setIsConnected] = useState(false);
+  
+  const handleConnect = () => {
+      setIsConnected(true);
+      // Logika integrasi data real-time bisa ditambahkan di sini
+    };
+
   const [selectedMetric, setSelectedMetric] = useState<keyof typeof healthMetrics | null>(null);
 
   return (
@@ -96,27 +104,20 @@ const Dashboard = () => {
             )}
             </div>
 
-            <div className="space-y-4 h-full flex flex-col justify-between">
-                {[
-                { name: "Lungs", icon: "🫁", progress: 50 },
-                { name: "Heart", icon: "❤️", progress: 80 },
-                { name: "Blood", icon: "🩸", progress: 40 },
-                ].map((item, index) => (
-                <div key={index} className="bg-white p-4 rounded-lg shadow-md flex items-center">
-                    <span className="text-3xl">{item.icon}</span>
-                    <div className="ml-4 flex-1">
-                    <p className="text-gray-800 font-semibold">{item.name}</p>
-                    <p className="text-xs text-gray-500">Date: 26 Okt 2021</p>
-                    <div className="w-full bg-gray-200 h-2 rounded-full mt-1">
-                        <div
-                        className="h-2 rounded-full bg-blue-500"
-                        style={{ width: `${item.progress}%` }}
-                        ></div>
-                    </div>
-                    </div>
-                </div>
-                ))}
-                <p className="text-right text-blue-600 text-sm cursor-pointer">Details →</p>
+            <div className="space-y-4 h-full flex flex-col justify-between">            
+            {/* Smart Watch Section */}
+            <div className="bg-white p-6 h-full rounded-lg shadow-md flex flex-col items-center">
+                <img src={smartWatchImage} alt="Smart Watch" className="w-40 h-auto mb-4 mt-4" />
+                <button 
+                onClick={handleConnect} 
+                className={`px-6 py-3 rounded-lg mt-8 font-semibold transition duration-300 ${isConnected ? "bg-green-600 text-white" : "bg-primary text-white hover:bg-blue-600"}`}
+                >
+                {isConnected ? "Connected" : "Connect to Smart Watch"}
+                </button>
+                {isConnected && <p className="text-green-700 mt-2">Data integrated in real time!</p>}
+            </div>
+            
+            <p className="text-right text-blue-600 text-sm cursor-pointer">Details →</p>
             </div>
         </div>
 
