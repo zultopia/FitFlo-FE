@@ -11,6 +11,7 @@ import RegisterPage from "@/pages/register";
 import Dashboard from "@/pages/dashboard";
 import ForgetPasswordPage from "@/pages/forgetpassword";
 import ProfilePage from "@/pages/profile";
+import PersonalCarePage from "@/pages/personalcare";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route element={<ForgetPasswordPage />} path="/forgetpassword" />
       <Route element={<MilestonesPage />} path="/milestones" />
       <Route element={<ProfilePage />} path="/profile" />
+      <Route element={<PersonalCarePage />} path="/personal-care" />
     </Routes>
   );
 }

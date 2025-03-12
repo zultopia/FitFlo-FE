@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import {
   FaHome,
   FaUser,
@@ -16,6 +17,7 @@ import { Link } from "@heroui/link";
 const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -64,11 +66,7 @@ const Sidebar = () => {
         <div className="flex items-center justify-between mt-2">
           {isSidebarOpen && (
             <div className="bg-primary p-2 rounded-lg">
-              <img
-                src={Logo}
-                alt="Fitflo Logo"
-                className="w-[120px] h-8"
-              />
+              <img src={Logo} alt="Fitflo Logo" className="w-[120px] h-8" />
             </div>
           )}
           <button
@@ -80,16 +78,16 @@ const Sidebar = () => {
         </div>
 
         <nav className="mt-4 space-y-6">
-          <SidebarLink href="/dashboard" icon={<FaHome size={18} />} text="Dashboard" isSidebarOpen={isSidebarOpen} />
-          <SidebarLink href="/pathway" icon={<MdEventNote size={18} />} text="Pathway Planner" isSidebarOpen={isSidebarOpen} />
-          <SidebarLink href="/healthcare" icon={<FaBriefcaseMedical size={18} />} text="Healthcare" isSidebarOpen={isSidebarOpen} />
-          <SidebarLink href="/personal-care" icon={<FaHeartbeat size={18} />} text="Personal Care" isSidebarOpen={isSidebarOpen} />
+          <SidebarLink href="/dashboard" icon={<FaHome size={18} />} text="Dashboard" isSidebarOpen={isSidebarOpen} currentPath={location.pathname} />
+          <SidebarLink href="/pathway" icon={<MdEventNote size={18} />} text="Pathway Planner" isSidebarOpen={isSidebarOpen} currentPath={location.pathname} />
+          <SidebarLink href="/healthcare" icon={<FaBriefcaseMedical size={18} />} text="Healthcare" isSidebarOpen={isSidebarOpen} currentPath={location.pathname} />
+          <SidebarLink href="/personal-care" icon={<FaHeartbeat size={18} />} text="Personal Care" isSidebarOpen={isSidebarOpen} currentPath={location.pathname} />
         </nav>
 
         <div className={`${isMobile ? "mt-16 space-y-6" : "mt-10 space-y-6"}`}>
-          <SidebarLink href="/faq" icon={<FaQuestionCircle size={18} />} text="FAQ" isSidebarOpen={isSidebarOpen} />
-          <SidebarLink href="/settings" icon={<FaCog size={18} />} text="Settings" isSidebarOpen={isSidebarOpen} />
-          <SidebarLink href="/profile" icon={<FaUser size={18} />} text="Profile" isSidebarOpen={isSidebarOpen} />
+          <SidebarLink href="/faq" icon={<FaQuestionCircle size={18} />} text="FAQ" isSidebarOpen={isSidebarOpen} currentPath={location.pathname} />
+          <SidebarLink href="/settings" icon={<FaCog size={18} />} text="Settings" isSidebarOpen={isSidebarOpen} currentPath={location.pathname} />
+          <SidebarLink href="/profile" icon={<FaUser size={18} />} text="Profile" isSidebarOpen={isSidebarOpen} currentPath={location.pathname} />
         </div>
         <button 
            onClick={handleLogout}
@@ -108,18 +106,20 @@ interface SidebarLinkProps {
     icon: React.ReactNode;
     text: string;
     isSidebarOpen: boolean;
+    currentPath: string;
 }
 
-const SidebarLink: React.FC<SidebarLinkProps> = ({ href, icon, text, isSidebarOpen }) => {
+const SidebarLink: React.FC<SidebarLinkProps> = ({ href, icon, text, isSidebarOpen, currentPath }) => {
+    const isActive = currentPath === href;
     return (
       <Link
         href={href}
-        className="flex items-center text-black text-[15px] font-medium hover:bg-accent hover:text-primary p-2 rounded-lg transition-all"
+        className={`flex items-center text-[15px] font-medium p-2 rounded-lg transition-all ${isActive ? "bg-primary text-white" : "text-black hover:bg-accent hover:text-primary"}`}
       >
         {icon}
         {isSidebarOpen && <span className="ml-3">{text}</span>}
       </Link>
     );
-  };
+};
 
 export default Sidebar;

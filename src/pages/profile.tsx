@@ -43,14 +43,14 @@ const Profile = () => {
   ];
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
       <Sidebar />
       <div className="flex-1 flex justify-center items-center p-8">
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }} 
           animate={{ opacity: 1, scale: 1 }} 
           transition={{ duration: 0.5 }}
-          className="w-full max-w-4xl rounded-lg p-8 relative bg-gray-100"
+          className="w-full max-w-4xl rounded-lg p-8 relative"
         >
           <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">Profile</h2>
           <button
