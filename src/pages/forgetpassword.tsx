@@ -1,5 +1,5 @@
 import { Link } from "@heroui/link";
-import Logo from "/logo.svg";
+import Logo from "/logoicon.svg";
 import { useState } from "react";
 
 const ForgetPassword = () => {
@@ -24,7 +24,7 @@ const ForgetPassword = () => {
         }}
       >
         <Link className="flex justify-center items-center gap-1" color="foreground" href="/">
-          <img alt="Logo" className="w-[80px] sm:w-[100px]" src={Logo} />
+          <img alt="Logo" className="w-[80px] sm:w-[180px]" src={Logo} />
         </Link>
         
         <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mt-4">Forgot Password</h2>
