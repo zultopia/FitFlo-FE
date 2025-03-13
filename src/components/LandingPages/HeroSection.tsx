@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FaArrowRight, FaChartLine } from "react-icons/fa";
 import { MdAccessTime } from "react-icons/md";
@@ -54,7 +54,7 @@ const pulseAnimation = {
 
 const HeroSection = () => {
   const { scrollYProgress } = useScroll();
-  const [mounted, setMounted] = useState(false);
+  const [_mounted, setMounted] = useState(false);
 
   // Mengubah range scrollYProgress dari [0, 0.4] menjadi [0, 0.2] agar efek lebih cepat
   // Dan memperbesar nilai rotasi dari 15 menjadi 25 derajat

@@ -25,20 +25,6 @@ interface SidebarProps {
 
 type MenuItem = Required<MenuProps>["items"][number];
 
-function getItem(
-  label: React.ReactNode,
-  key: React.Key,
-  icon?: React.ReactNode,
-  children?: MenuItem[]
-): MenuItem {
-  return {
-    key,
-    icon,
-    children,
-    label,
-  } as MenuItem;
-}
-
 const Sidebar: React.FC<SidebarProps> = ({
   onCollapse,
   collapsed: externalCollapsed,
