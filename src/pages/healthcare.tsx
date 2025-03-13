@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import Sidebar from "@/components/sidebar";
 import FilterButtonGroup from "@/components/ui/filter-button";
 import Hospital1 from "@/assets/hospital1.jpg";
 import Hospital2 from "@/assets/hospital2.png";
@@ -10,6 +9,7 @@ import PHC1 from "@/assets/phc1.jpg";
 import PHC2 from "@/assets/phc2.jpg";
 import Lab1 from "@/assets/lab1.jpg";
 import Lab2 from "@/assets/lab2.jpg";
+import AppLayout from "@/components/AppLayout";
 
 const healthcare_facility = [
   {
@@ -497,9 +497,7 @@ const HealthcarePage = () => {
   );
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
-      <Sidebar />
-
+    <AppLayout>
       <div className="p-8">
         <h1 className="text-2xl font-bold text-gray-900 my-6">
           Healthcare Facilities
@@ -577,7 +575,7 @@ const HealthcarePage = () => {
           ))}
         </div>
       </div>
-    </div>
+    </AppLayout>
   );
 };
 

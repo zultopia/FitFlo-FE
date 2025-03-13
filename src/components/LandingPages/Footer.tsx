@@ -179,7 +179,7 @@ const Footer = () => {
             <div className="mb-6 md:mb-0">
               <p className="text-gray-600 mb-2 text-right">
                 <EmailIcon className="inline-block h-5 w-5 mr-2" />
-                hello@fitflo.com
+                hello@fitflo.site
               </p>
               <p className="text-gray-600 text-right">
                 <LocationIcon className="inline-block h-5 w-5 mr-2" />

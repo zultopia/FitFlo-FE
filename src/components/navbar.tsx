@@ -81,7 +81,7 @@ export const Navbar = () => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden lg:flex basis-1/2" justify="center">
+      <NavbarContent className="hidden lg:flex basis-1/2 mt-2" justify="center">
         <div className="flex gap-4 justify-center">
           {siteConfig.navItems.slice(0, 3).map((item) => (
             <NavbarItem key={item.href}>
@@ -105,7 +105,7 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2" />
-        <NavbarItem className="hidden md:flex">
+        <NavbarItem className="hidden md:flex mt-3">
           <div className="flex gap-2">
             <Link to="/login">
               <Button

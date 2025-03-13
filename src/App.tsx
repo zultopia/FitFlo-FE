@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { ConfigProvider } from "antd";
 
 import IndexPage from "@/pages/index";
 import AboutPage from "@/pages/about";
@@ -14,19 +15,28 @@ import HealthcarePage from "@/pages/healthcare";
 
 function App() {
   return (
-    <Routes>
-      <Route element={<IndexPage />} path="/" />
-      <Route element={<AboutPage />} path="/about" />
-      <Route element={<LoginPage />} path="/login" />
-      <Route element={<RegisterPage />} path="/register" />
-      <Route element={<Dashboard />} path="/dashboard" />
-      <Route element={<ForgetPasswordPage />} path="/forgetpassword" />
-      <Route element={<MilestonesPage />} path="/milestones" />
-      <Route element={<ProfilePage />} path="/profile" />
-      <Route element={<PersonalCarePage />} path="/personal-care" />
-      <Route element={<PathwayPlannerPage />} path="/pathway" />
-      <Route element={<HealthcarePage />} path="/healthcare" />
-    </Routes>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: "#0d6efd", // Adjust this to match your app's primary color
+          borderRadius: 8,
+        },
+      }}
+    >
+      <Routes>
+        <Route element={<IndexPage />} path="/" />
+        <Route element={<AboutPage />} path="/about" />
+        <Route element={<LoginPage />} path="/login" />
+        <Route element={<RegisterPage />} path="/register" />
+        <Route element={<Dashboard />} path="/dashboard" />
+        <Route element={<ForgetPasswordPage />} path="/forgetpassword" />
+        <Route element={<MilestonesPage />} path="/milestones" />
+        <Route element={<ProfilePage />} path="/profile" />
+        <Route element={<PersonalCarePage />} path="/personal-care" />
+        <Route element={<PathwayPlannerPage />} path="/pathway" />
+        <Route element={<HealthcarePage />} path="/healthcare" />
+      </Routes>
+    </ConfigProvider>
   );
 }
 
