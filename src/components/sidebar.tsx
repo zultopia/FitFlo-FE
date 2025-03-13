@@ -146,15 +146,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         <div
           aria-label="Close sidebar"
           role="button"
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: "rgba(0,0,0,0.5)",
-            zIndex: 90,
-          }}
+          className="fixed inset-0 bg-black/50 z-[90]"
           tabIndex={0}
           onClick={handleToggleCollapse}
           onKeyDown={(e) => {
@@ -169,12 +161,7 @@ const Sidebar: React.FC<SidebarProps> = ({
       {isMobile && collapsed && (
         <Button
           icon={<MenuUnfoldOutlined />}
-          style={{
-            position: "fixed",
-            top: "20px",
-            left: "20px",
-            zIndex: 99,
-          }}
+          className="fixed top-5 left-5 z-[99]"
           type="primary"
           onClick={handleToggleCollapse}
         />
@@ -185,34 +172,17 @@ const Sidebar: React.FC<SidebarProps> = ({
         breakpoint="md"
         collapsed={collapsed}
         collapsedWidth={isMobile ? 0 : 80}
-        style={{
-          backgroundColor: colorBgContainer,
-          borderRight: "1px solid #f0f0f0",
-          overflow: "auto",
-          height: "100vh",
-          position: "fixed",
-          left: 0,
-          top: 0,
-          bottom: 0,
-          zIndex: 100,
-        }}
+        className="border-r border-[#f0f0f0] overflow-auto h-screen fixed left-0 top-0 bottom-0 z-[100]"
+        style={{ backgroundColor: colorBgContainer }}
         trigger={null}
         width={250}
         onBreakpoint={(broken) => {
           setIsMobile(broken);
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "16px",
-            borderBottom: "1px solid #f0f0f0",
-          }}
-        >
+        <div className="flex justify-between items-center p-4 border-b border-[#f0f0f0]">
           {!collapsed && (
-            <div className="bg-primary p-2 rounded-lg">
+            <div className="rounded-lg">
               <img
                 alt="Fitflo Logo"
                 className="w-[120px] h-8"
@@ -222,9 +192,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           )}
           <Button
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            style={{
-              fontSize: "16px",
-            }}
+            className="text-base"
             type="text"
             onClick={handleToggleCollapse}
           />
@@ -235,23 +203,15 @@ const Sidebar: React.FC<SidebarProps> = ({
           items={items}
           mode="inline"
           selectedKeys={[location.pathname]}
-          style={{ borderRight: 0 }}
+          className="border-r-0"
           onClick={handleMenuClick}
         />
 
-        <div
-          style={{
-            padding: "16px",
-            position: "absolute",
-            bottom: 0,
-            width: "100%",
-            borderTop: "1px solid #f0f0f0",
-          }}
-        >
+        <div className="p-4 absolute bottom-0 w-full border-t border-[#f0f0f0]">
           <Button
             danger
             icon={<LogoutOutlined />}
-            style={{ width: "100%" }}
+            className="w-full"
             type="primary"
             onClick={handleLogout}
           >
