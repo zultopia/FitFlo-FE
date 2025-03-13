@@ -60,13 +60,6 @@ const ImpactSection = () => {
       const height = containerRef.current.offsetHeight;
 
       containerRef.current.style.height = `${height}px`;
-
-      // Small delay to ensure layout calculations are complete
-      setTimeout(() => {
-        if (containerRef.current) {
-          containerRef.current.style.height = "220vh";
-        }
-      }, 100);
     }
 
     return () => setIsMounted(false);
@@ -75,7 +68,7 @@ const ImpactSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative pt-4 pb-[350px] md:pt-8 md:pb-1 bg-white overflow-hidden"
+      className="relative pt-4 pb-[80px] md:pt-8 bg-white overflow-hidden"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-200 opacity-20 blur-3xl rounded-full" />
@@ -110,11 +103,11 @@ const ImpactSection = () => {
         {/* Sticky container for card animations */}
         <div
           ref={containerRef}
-          className="sticky-cards-container h-[220vh]"
+          className="sticky-cards-container h-[100vh]"
           id="impact-scroll-container"
         >
-          <div className="sticky top-2 md:top-4 pt-7 pb-6">
-            <div className="card-stack-wrapper max-w-xl w-full mx-auto relative h-[450px]">
+          <div className="sticky top-2 md:top-4 pt-7">
+            <div className="card-stack-wrapper max-w-xl w-full mx-auto relative h-[250px]">
               {isMounted &&
                 impactData.map((impact, index) => (
                   <CardWithScrollAnimation
@@ -131,7 +124,7 @@ const ImpactSection = () => {
       </div>
 
       {/* Add extra space after the cards */}
-      <div className="h-16 md:h-2" />
+      <div className="h-1" />
     </section>
   );
 };
