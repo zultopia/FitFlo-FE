@@ -30,7 +30,7 @@ const tiltAnimation = {
   animate: {
     rotate: [-1, 1, -1],
     transition: {
-      duration: 6,
+      duration: 3,
       ease: "easeInOut",
       repeat: Infinity,
       repeatType: "reverse" as const,
@@ -58,10 +58,10 @@ const HeroSection = () => {
 
   // Mengubah range scrollYProgress dari [0, 0.4] menjadi [0, 0.2] agar efek lebih cepat
   // Dan memperbesar nilai rotasi dari 15 menjadi 25 derajat
-  const rotate = useTransform(scrollYProgress, [0, 0.2], [25, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2], [0.9, 1]);
+  const rotate = useTransform(scrollYProgress, [0, 0.08], [25, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.1], [0.9, 1]);
   // Memperbesar range pergerakan y dari [-80, 30] menjadi [-120, 50]
-  const y = useTransform(scrollYProgress, [0, 0.2], [-120, 50]);
+  const y = useTransform(scrollYProgress, [0, 0.08], [-120, 50]);
 
   // Client-side only mounting
   useEffect(() => {
