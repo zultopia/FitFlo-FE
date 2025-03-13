@@ -23,8 +23,6 @@ interface SidebarProps {
   collapsed?: boolean;
 }
 
-type MenuItem = Required<MenuProps>["items"][number];
-
 const Sidebar: React.FC<SidebarProps> = ({
   onCollapse,
   collapsed: externalCollapsed,
