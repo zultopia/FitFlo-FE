@@ -112,12 +112,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             ref={(el) => (sectionRefs.current[index] = el)}
             className="flex justify-start pt-10 md:pt-14 md:gap-10"
           >
-            <div className="sticky flex flex-col md:flex-row z-30 items-center top-16 self-start max-w-xs lg:max-w-md md:w-full bg-white dark:bg-neutral-950 py-6">
+            <div className="sticky flex flex-col md:flex-row z-30 items-center top-16 self-start max-w-xs lg:max-w-md md:w-full bg-transparent dark:bg-transparent py-6">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
                 <div 
                   className={`h-4 w-4 rounded-full ${
                     activeIndex === index 
-                      ? "bg-blue-500 border border-blue-400" 
+                      ? "bg-blue-500 border border-blue-100" 
                       : "bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700"
                   } p-2`} 
                 />

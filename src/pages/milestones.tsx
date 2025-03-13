@@ -1,10 +1,8 @@
-import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+import { Image } from "@heroui/react";
 
 import { Timeline } from "@/components/ui/timeline";
 import DefaultLayout from "@/layouts/default";
-
-const Image = dynamic(() => import("next/image"), { ssr: false });
 
 export default function DocsPage() {
   const data = [
@@ -23,12 +21,11 @@ export default function DocsPage() {
           <div className="grid grid-cols-2 gap-4">
             {["team-meeting", "project-roadmap"].map((img) => (
               <Image
+                isZoomed
                 key={img}
                 alt={img}
                 className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                height={500}
-                src={`https://assets.aceternity.com/${img}.png`}
-                width={500}
+                src=""
               />
             ))}
           </div>
@@ -49,18 +46,16 @@ export default function DocsPage() {
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
+              isZoomed
               alt="prototype-interface"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              height={500}
-              src={`https://assets.aceternity.com/templates/startup-1.webp`}
-              width={500}
+              src="/milestones/prototyping.jpg"
             />
             <Image
+              isZoomed
               alt="data-integration-diagram"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              height={500}
-              src={`https://assets.aceternity.com/features-section.png`}
-              width={500}
+              src=""
             />
           </div>
         </div>
@@ -78,16 +73,13 @@ export default function DocsPage() {
             integration, and budget-friendly healthcare planning.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            {["beta-version", "user-testimonial"].map((img) => (
-              <Image
-                key={img}
-                alt={img}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                height={500}
-                src={`https://assets.aceternity.com/${img}.png`}
-                width={500}
-              />
-            ))}
+            <Image
+              isZoomed
+              key="beta-version"
+              alt="beta-version"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              src=""
+            />
           </div>
         </div>
       ),
@@ -105,18 +97,16 @@ export default function DocsPage() {
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
+              isZoomed
               alt="main-dashboard"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              height={500}
-              src={`https://assets.aceternity.com/templates/startup-3.webp`}
-              width={500}
+              src=""
             />
             <Image
+              isZoomed
               alt="user-statistics"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              height={500}
-              src={`https://assets.aceternity.com/pro/bento-grids.png`}
-              width={500}
+              src=""
             />
           </div>
         </div>
@@ -135,18 +125,16 @@ export default function DocsPage() {
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
+              isZoomed
               alt="partnership-logos"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              height={500}
-              src={`https://assets.aceternity.com/templates/startup-4.webp`}
-              width={500}
+              src=""
             />
             <Image
+              isZoomed
               alt="healthcare-collaboration"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              height={500}
-              src={`https://assets.aceternity.com/cards.png`}
-              width={500}
+              src=""
             />
           </div>
         </div>
@@ -165,18 +153,16 @@ export default function DocsPage() {
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
+              isZoomed
               alt="global-expansion-map"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              height={500}
-              src={`https://assets.aceternity.com/pro/hero-sections.png`}
-              width={500}
+              src=""
             />
             <Image
+              isZoomed
               alt="diverse-users"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              height={500}
-              src={`https://assets.aceternity.com/templates/startup-2.webp`}
-              width={500}
+              src=""
             />
           </div>
         </div>
