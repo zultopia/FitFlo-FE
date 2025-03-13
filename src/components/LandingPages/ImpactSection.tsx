@@ -6,7 +6,7 @@ import {
   FaGlobeAmericas,
   FaChartLine,
 } from "react-icons/fa";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const impactData = [
   {
@@ -49,6 +49,28 @@ const impactData = [
 const ImpactSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Ensure component is mounted before animations run
+  useEffect(() => {
+    setIsMounted(true);
+
+    // Force a reflow/repaint to ensure scroll calculations are accurate
+    if (containerRef.current) {
+      const height = containerRef.current.offsetHeight;
+
+      containerRef.current.style.height = `${height}px`;
+
+      // Small delay to ensure layout calculations are complete
+      setTimeout(() => {
+        if (containerRef.current) {
+          containerRef.current.style.height = "220vh";
+        }
+      }, 100);
+    }
+
+    return () => setIsMounted(false);
+  }, []);
 
   return (
     <section
@@ -86,18 +108,23 @@ const ImpactSection = () => {
         </div>
 
         {/* Sticky container for card animations */}
-        <div ref={containerRef} className="sticky-cards-container h-[220vh]">
+        <div
+          ref={containerRef}
+          className="sticky-cards-container h-[220vh]"
+          id="impact-scroll-container"
+        >
           <div className="sticky top-2 md:top-4 pt-7 pb-6">
             <div className="card-stack-wrapper max-w-xl w-full mx-auto relative h-[450px]">
-              {impactData.map((impact, index) => (
-                <CardWithScrollAnimation
-                  key={index}
-                  containerRef={containerRef}
-                  impact={impact}
-                  index={index}
-                  totalCards={impactData.length}
-                />
-              ))}
+              {isMounted &&
+                impactData.map((impact, index) => (
+                  <CardWithScrollAnimation
+                    key={index}
+                    containerRef={containerRef}
+                    impact={impact}
+                    index={index}
+                    totalCards={impactData.length}
+                  />
+                ))}
             </div>
           </div>
         </div>
@@ -122,18 +149,22 @@ const CardWithScrollAnimation = ({
   containerRef,
   totalCards,
 }: CardProps) => {
+  // Use a more reliable scroll configuration with viewport margins
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["-0.3 start", "end end"],
+    offset: ["start 0.7", "end 0.8"],
   });
 
   // Create custom easing function
   const customEase = cubicBezier(0.16, 1, 0.3, 1);
 
-  // Calculate when each card should appear based on scroll progress
-  const sectionProgressPerCard = 1 / (totalCards + 0.05);
-  const cardAppearStart = Math.max(0, index * sectionProgressPerCard - 0.05);
-  const cardAppearEnd = cardAppearStart + sectionProgressPerCard * 0.7;
+  // Adjust the timing for each card to be more spaced out
+  const sectionProgressPerCard = 1 / (totalCards + 0.5);
+  const cardAppearStart = index * sectionProgressPerCard;
+  const cardAppearEnd = Math.min(
+    1,
+    cardAppearStart + sectionProgressPerCard * 0.8
+  );
 
   // Card animations based on scroll
   const opacity = useTransform(
@@ -143,11 +174,11 @@ const CardWithScrollAnimation = ({
     { ease: customEase }
   );
 
-  // Modified y transform - cards come from below
+  // Modified y transform - cards come from above
   const y = useTransform(
     scrollYProgress,
     [cardAppearStart, cardAppearEnd],
-    [100, 0],
+    [-100, 0],
     { ease: customEase }
   );
 
@@ -177,18 +208,17 @@ const CardWithScrollAnimation = ({
   );
 
   // Show slight edges of cards to create stacking effect
-  // Earlier cards peek out slightly from behind the top card
   const topOffset = index * 4;
   const leftOffset = index % 2 === 0 ? index * 2 : 0;
   const rightOffset = index % 2 === 1 ? index * 2 : 0;
 
-  // Ensure proper stacking order - newer cards completely cover older ones
-  // Use a much bigger z-index increment to ensure proper stacking
-  const zIndex = index * 10;
+  // Set proper stacking order with higher indexes on top (first card highest)
+  const zIndex = (totalCards - index) * 10;
 
   return (
     <motion.div
       className={`p-8 rounded-3xl shadow-xl flex flex-col items-start text-left bg-gradient-to-br ${impact.bgColor} relative overflow-hidden w-full`}
+      initial={{ opacity: 0, y: -100 }}
       style={{
         opacity,
         y,

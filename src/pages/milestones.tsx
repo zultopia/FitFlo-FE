@@ -9,44 +9,23 @@ const Image = dynamic(() => import("next/image"), { ssr: false });
 export default function DocsPage() {
   const data = [
     {
-      title: "Problem Identification & Research (January 2025)",
+      title: "January 2025: Kicking Off the FitFlo Journey",
       content: (
         <div>
           <p className="text-black dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Conducted extensive research to identify key challenges in the
-            healthcare system, focusing on accessibility, efficiency, and
-            patient experience.
+            In January 2025, we officially launched the FitFlo project. This
+            phase focuses on setting clear goals, defining core features, and
+            assembling a dedicated team of developers, designers, and healthcare
+            experts. We also began building strategic partnerships with
+            healthcare providers and technology platforms to ensure seamless
+            integration of health data.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            {["research-team", "survey-analysis"].map((img) => (
+            {["team-meeting", "project-roadmap"].map((img) => (
               <Image
                 key={img}
                 alt={img}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
-                height={500}
-                src={`https://www.istockphoto.com/id/foto-foto/${img}.png`}
-                width={500}
-              />
-            ))}
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Solution Design & Prototyping (February 2025)",
-      content: (
-        <div>
-          <p className="text-black dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Developed initial prototypes and wireframes for an integrated
-            healthcare management platform, incorporating feedback from medical
-            professionals.
-          </p>
-          <div className="grid grid-cols-2 gap-4">
-            {["wireframe", "prototype-testing"].map((img) => (
-              <Image
-                key={img}
-                alt={img}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
+                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
                 height={500}
                 src={`https://assets.aceternity.com/${img}.png`}
                 width={500}
@@ -57,44 +36,53 @@ export default function DocsPage() {
       ),
     },
     {
-      title: "Website Development & Launch (March 2025)",
+      title: "February - March 2025: Deep Research and Prototype Development",
       content: (
         <div>
           <p className="text-black dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Built and deployed the first version of the website, providing
-            essential services like online consultations, appointment
-            scheduling, and medical record access.
+            During these two months, we conducted in-depth research to
+            understand the challenges faced by patients and healthcare
+            providers. Our focus was on fragmented health data, high costs, and
+            complex systems. We developed a prototype that includes key features
+            such as real-time data sharing, AI-powered insights, and cost
+            management tools.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            {[1, 2, 3, 4].map((num) => (
-              <Image
-                key={num}
-                alt={`startup template ${num}`}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
-                height={500}
-                src={`https://assets.aceternity.com/templates/startup-${num}.webp`}
-                width={500}
-              />
-            ))}
+            <Image
+              alt="prototype-interface"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              height={500}
+              src={`https://assets.aceternity.com/templates/startup-1.webp`}
+              width={500}
+            />
+            <Image
+              alt="data-integration-diagram"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              height={500}
+              src={`https://assets.aceternity.com/features-section.png`}
+              width={500}
+            />
           </div>
         </div>
       ),
     },
     {
-      title: "Expansion & Hospital Partnerships (Mid 2025)",
+      title: "April 2025: Testing the Waters with Beta Launch",
       content: (
         <div>
           <p className="text-black dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Established collaborations with hospitals and clinics to integrate
-            their systems into the platform, improving service reach and
-            efficiency.
+            In April 2025, we released the beta version of FitFlo to a select
+            group of early adopters. This phase allowed us to gather valuable
+            feedback and refine the platform. Key features tested during the
+            beta launch included personalized treatment plans, seamless data
+            integration, and budget-friendly healthcare planning.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            {["hospital-partnership", "system-integration"].map((img) => (
+            {["beta-version", "user-testimonial"].map((img) => (
               <Image
                 key={img}
                 alt={img}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
+                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
                 height={500}
                 src={`https://assets.aceternity.com/${img}.png`}
                 width={500}
@@ -105,24 +93,91 @@ export default function DocsPage() {
       ),
     },
     {
-      title: "Continuous Improvement & Maintenance (End of The Year)",
+      title: "June 2025: Introducing FitFlo to the World",
       content: (
         <div>
           <p className="text-black dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Regular updates and feature enhancements based on user feedback to
-            ensure a seamless healthcare experience.
+            By June 2025, FitFlo was officially launched to the public. The
+            platform quickly gained traction, helping thousands of users manage
+            their health more effectively. The official launch included advanced
+            features like wearable device integration, telemedicine support, and
+            AI-driven health recommendations.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            {["feature-update", "customer-support"].map((img) => (
-              <Image
-                key={img}
-                alt={img}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
-                height={500}
-                src={`https://assets.aceternity.com/${img}.png`}
-                width={500}
-              />
-            ))}
+            <Image
+              alt="main-dashboard"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              height={500}
+              src={`https://assets.aceternity.com/templates/startup-3.webp`}
+              width={500}
+            />
+            <Image
+              alt="user-statistics"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              height={500}
+              src={`https://assets.aceternity.com/pro/bento-grids.png`}
+              width={500}
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "August 2025: Scaling Up and Building Partnerships",
+      content: (
+        <div>
+          <p className="text-black dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            In August 2025, FitFlo expanded its reach by partnering with
+            hospitals, clinics, and insurance providers. These partnerships
+            enabled us to integrate FitFlo into existing healthcare systems. We
+            also introduced new features like advanced AI models and enhanced
+            accessibility for underserved communities.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              alt="partnership-logos"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              height={500}
+              src={`https://assets.aceternity.com/templates/startup-4.webp`}
+              width={500}
+            />
+            <Image
+              alt="healthcare-collaboration"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              height={500}
+              src={`https://assets.aceternity.com/cards.png`}
+              width={500}
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2026 and Beyond: Transforming Healthcare Globally",
+      content: (
+        <div>
+          <p className="text-black dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Looking ahead to 2026, FitFlo aims to become a global leader in
+            value-based healthcare. We plan to expand into international
+            markets, introduce cutting-edge AI models, and enhance accessibility
+            for underserved communities. Our vision is to make quality
+            healthcare accessible to everyone, everywhere.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              alt="global-expansion-map"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              height={500}
+              src={`https://assets.aceternity.com/pro/hero-sections.png`}
+              width={500}
+            />
+            <Image
+              alt="diverse-users"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              height={500}
+              src={`https://assets.aceternity.com/templates/startup-2.webp`}
+              width={500}
+            />
           </div>
         </div>
       ),
@@ -131,7 +186,7 @@ export default function DocsPage() {
 
   return (
     <DefaultLayout>
-      <div className="absolute inset-0 bg-gradient-to-b from-[#A3D6DC] to-white animate-gradient blur-3xl opacity-30 -z-10" />
+      <div className="absolute inset-0 blur-3xl opacity-30 -z-10" />
 
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 relative">
         <motion.div
@@ -141,31 +196,15 @@ export default function DocsPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         />
 
-        <motion.h1
-          animate={{ opacity: 1, y: 0 }}
-          className="mt-16 text-4xl font-bold text-center text-black dark:text-white"
-          initial={{ opacity: 0, y: -20 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        >
-          Transforming Healthcare: From Research to Reality
-        </motion.h1>
-
-        <motion.p
-          animate={{ opacity: 1, scale: 1 }}
-          className="text-center text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-2xl"
-          initial={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-        >
-          Follow our journey as we revolutionize healthcare through research,
-          innovation, and strategic partnerships.
-        </motion.p>
-
         <motion.div
           animate={{ opacity: 1, y: 0 }}
+          className="w-full"
           initial={{ opacity: 0, y: 30 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          <Timeline data={data} />
+          <div className="min-h-screen w-full">
+            <Timeline data={data} />
+          </div>
         </motion.div>
       </section>
     </DefaultLayout>

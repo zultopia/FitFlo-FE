@@ -105,7 +105,7 @@ const Register = () => {
                   color="primary" 
                   size="sm"
                   onClick={validateEmail}
-                  className="h-[40px] whitespace-nowrap"
+                  className="h-[40px] whitespace-nowrap font-medium"
                 >
                   Verify Email
                 </Button>

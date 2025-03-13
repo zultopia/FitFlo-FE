@@ -31,7 +31,7 @@ const features = [
 const FeaturesSection = () => {
   return (
     <motion.section
-      className="py-24 bg-white dark:bg-gray-900"
+      className="pb-24 pt-10 bg-white dark:bg-gray-900"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
