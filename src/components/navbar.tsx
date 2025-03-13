@@ -6,6 +6,7 @@ import {
   NavbarItem,
   NavbarMenu,
   NavbarMenuItem,
+  NavbarMenuToggle,
 } from "@heroui/navbar";
 import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
@@ -21,6 +22,7 @@ import Logo from "/logo.svg";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,11 +40,36 @@ export const Navbar = () => {
     <HeroUINavbar
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        scrolled ? "bg-white/70 backdrop-blur-md shadow-sm" : "bg-transparent",
+        scrolled ? "bg-white/70 backdrop-blur-md shadow-sm" : "bg-transparent"
       )}
+      isMenuOpen={isMenuOpen}
       maxWidth="xl"
+      onMenuOpenChange={setIsMenuOpen}
     >
-      <NavbarContent className="basis-1/5 sm:basis-1/4" justify="start">
+      {/* Mobile Layout */}
+      <NavbarContent className="sm:hidden" justify="start">
+        <NavbarBrand>
+          <Link
+            className="flex justify-start items-center gap-1"
+            color="foreground"
+            to="/"
+          >
+            <img alt="Logo" className="w-20" src={Logo} />
+          </Link>
+        </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent className="sm:hidden" justify="end">
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        />
+      </NavbarContent>
+
+      {/* Desktop Layout */}
+      <NavbarContent
+        className="hidden sm:flex basis-1/5 sm:basis-1/4"
+        justify="start"
+      >
         <NavbarBrand className="gap-3 max-w-fit">
           <Link
             className="flex justify-start items-center gap-1"
@@ -61,7 +88,7 @@ export const Navbar = () => {
               <Link
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium hover:text-primary",
+                  "data-[active=true]:text-primary data-[active=true]:font-medium hover:text-primary"
                 )}
                 color="foreground"
                 to={item.href}
@@ -112,7 +139,7 @@ export const Navbar = () => {
                       ? "danger"
                       : "foreground"
                 }
-                to="#"
+                to={item.href}
               >
                 {item.label}
               </Link>
