@@ -1,7 +1,7 @@
 import type { MenuProps } from "antd";
 
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { To, useLocation, useNavigate } from "react-router-dom";
 import {
   HomeOutlined,
   ScheduleOutlined,
@@ -27,7 +27,6 @@ const Sidebar: React.FC<SidebarProps> = ({
   onCollapse,
   collapsed: externalCollapsed,
 }) => {
-  // Use local state as a fallback if no external state is provided
   const [internalCollapsed, setInternalCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
@@ -36,7 +35,6 @@ const Sidebar: React.FC<SidebarProps> = ({
     token: { colorBgContainer },
   } = theme.useToken();
 
-  // Determine which collapsed state to use
   const collapsed =
     externalCollapsed !== undefined ? externalCollapsed : internalCollapsed;
 
@@ -47,7 +45,6 @@ const Sidebar: React.FC<SidebarProps> = ({
       setIsMobile(mobile);
 
       if (mobile) {
-        // Only call onCollapse if we're transitioning to mobile
         if (!collapsed) {
           if (onCollapse) {
             onCollapse(true);
@@ -119,13 +116,12 @@ const Sidebar: React.FC<SidebarProps> = ({
     },
   ];
 
-  const handleMenuClick: MenuProps["onClick"] = (e) => {
+  const handleMenuClick: MenuProps["onClick"] = (e: { key: To; }) => {
     navigate(e.key);
   };
 
   return (
     <>
-      {/* Backdrop for mobile view when sidebar is open */}
       {isMobile && !collapsed && (
         <div
           aria-label="Close sidebar"
@@ -141,7 +137,6 @@ const Sidebar: React.FC<SidebarProps> = ({
         />
       )}
 
-      {/* Mobile menu toggle button that appears when sidebar is collapsed */}
       {isMobile && collapsed && (
         <Button
           icon={<MenuUnfoldOutlined />}
@@ -160,7 +155,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         style={{ backgroundColor: colorBgContainer }}
         trigger={null}
         width={250}
-        onBreakpoint={(broken) => {
+        onBreakpoint={(broken: boolean | ((prevState: boolean) => boolean)) => {
           setIsMobile(broken);
         }}
       >
